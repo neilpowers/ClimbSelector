@@ -1,0 +1,37 @@
+0.FilterableClimbsList [common owner component of state]
+    1.ClimbsList
+        ClimbListItem
+            - 100climbs.climb.rating
+            - 100climbs.climb.name
+            - 100climbs.climb.location
+            - 100climbs.climb.gradient-average
+        ClimbListPaginate (link / button)
+
+    2.ClimbsListFilter
+        FilterByRegion (combo box)  [has state]
+            - 100climbs.climb.region
+        FilterByRating (slider)     [has state]
+            - 100climbs.climb.rating
+        FilterByElevationGain       [has state]
+            - 100climbs.climb.elevation-gain-metres
+
+    3.ClimbDetail
+        ClimbDetailHeader
+            - 100climbs.climb.rating
+            - 100climbs.climb.name
+            - 100climbs.climb.location
+        ClimbDetailContent
+            - 100climbs.climb.primary-image
+            - 100climbs.climb.description
+        ClimbDetailFactfile
+            - 100climbs.climb.where-image
+            - 100climbs.climb.duration-minutes
+            - 100climbs.climb.grid-location
+            - 100climbs.climb.length-kilometres
+            - 100climbs.climb.elevation-gain-metres
+            - 100climbs.climb.gradient-maximum
+
+
+
+
+

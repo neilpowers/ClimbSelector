@@ -1,0 +1,18 @@
+{"ClimbPicker": {
+    "climb": {
+        "id": "001",
+        "name": "Cheddar Gorge",
+        "region":"South West",
+        "location": "Somerset",
+        "grid-location": "TBC",
+        "rating": 6,
+        "duration-minutes" : 20,
+        "length-kilometres": 3.5,
+        "elevation-gain-metres": 150,
+        "gradient-average": 5,
+        "gradient-maximum": 16,
+        "primary-image": "/path/to/primary-image",
+        "where-image": "/path/to/where-image",
+        "description": "Bacon ipsum dolor amet sirloin pork chop andouille picanha. Spare ribs tri-tip meatball ham, ham hock flank beef leberkas. Kevin ham hock turducken, doner spare ribs turkey frankfurter ground round meatball bresaola. Chuck flank shankle brisket pork. Tri-tip hamburger turkey tail frankfurter leberkas. Bacon ham hock sausage hamburger pork t-bone biltong porchetta. T-bone prosciutto sirloin pork belly jowl, corned beef bresaola cupim. Leberkas kevin biltong cow. Brisket ribeye porchetta pastrami pig capicola filet mignon frankfurter meatloaf shank. Chuck chicken beef ribs shankle tenderloin short loin."
+    }
+}}   
