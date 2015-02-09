@@ -10,6 +10,7 @@ var FilterableClimbsList = React.createClass({
             <h1>FilterableClimbsList</h1>
             <ClimbList />
             <ClimbListFilter />
+            <ClimbDetail />
 
             </div>
             );
@@ -92,6 +93,50 @@ var FilterByElevationGain = React.createClass({
                 <h3>Im a FilterByElevationGain</h3>
             </div>
             );
+    }
+});
+
+
+var ClimbDetail = React.createClass({
+    render: function(){
+        return (
+            <div className="ClimbDetail">
+                <h2>Im a ClimbDetail</h2>
+                <ClimbDetailHeader />
+                <ClimbDetailContent />
+                <ClimbDetailFactfile />
+            </div>
+        );
+    }
+});
+
+var ClimbDetailHeader = React.createClass({
+    render: function(){
+        return (
+            <div className="ClimbDetailHeader">
+                <h3>Im a ClimbDetailHeader</h3>
+            </div>
+        );
+    }
+});
+
+var ClimbDetailContent = React.createClass({
+    render: function(){
+        return (
+            <div className="ClimbDetailContent">
+                <h3>Im a ClimbDetailContent</h3>
+            </div>
+        );
+    }
+});
+
+var ClimbDetailFactfile = React.createClass({
+    render: function(){
+        return (
+            <div className="ClimbDetailFactfile">
+                <h3>Im a ClimbDetailFactfile</h3>
+            </div>
+        );
     }
 });
 
