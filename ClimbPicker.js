@@ -2,13 +2,48 @@
  * Created by npowers on 06/02/15.
  */
 
+// todo move data to a json file
+var data = [
+    {
+        "id": "001",
+        "name": "Cheddar Gorge",
+        "region":"South West",
+        "location": "Somerset",
+        "gridLocation": "TBC",
+        "rating": 6,
+        "durationMinutes" : 20,
+        "lengthKilometres": 3.5,
+        "elevationGainMetres": 150,
+        "gradientAverage": 5,
+        "gradientMaximum": 16,
+        "primaryImage": "/path/to/primary-image",
+        "whereImage": "/path/to/where-image",
+        "description": "Bacon ipsum dolor amet sirloin pork chop andouille picanha. Spare ribs tri-tip meatball ham, ham hock flank beef leberkas. Kevin ham hock turducken, doner spare ribs turkey frankfurter ground round meatball bresaola. Chuck flank shankle brisket pork. Tri-tip hamburger turkey tail frankfurter leberkas. Bacon ham hock sausage hamburger pork t-bone biltong porchetta. T-bone prosciutto sirloin pork belly jowl, corned beef bresaola cupim. Leberkas kevin biltong cow. Brisket ribeye porchetta pastrami pig capicola filet mignon frankfurter meatloaf shank. Chuck chicken beef ribs shankle tenderloin short loin."
+    },
+    {
+        "id": "004",
+        "name": "Dunkery Beacon",
+        "region":"South West",
+        "location": "Somerset",
+        "gridLocation": "TBC",
+        "rating": 10,
+        "durationMinutes" : 25,
+        "lengthKilometres": 3.5,
+        "elevationGainMetres": 370,
+        "gradientAverage": 10.2,
+        "gradientMaximum": 18,
+        "primaryImage": "/path/to/primary-image",
+        "whereImage": "/path/to/where-image",
+        "description": "Bacon ipsum dolor amet sirloin pork chop andouille picanha. Spare ribs tri-tip meatball ham, ham hock flank beef leberkas. Kevin ham hock turducken, doner spare ribs turkey frankfurter ground round meatball bresaola. Chuck flank shankle brisket pork. Tri-tip hamburger turkey tail frankfurter leberkas. Bacon ham hock sausage hamburger pork t-bone biltong porchetta. T-bone prosciutto sirloin pork belly jowl, corned beef bresaola cupim. Leberkas kevin biltong cow. Brisket ribeye porchetta pastrami pig capicola filet mignon frankfurter meatloaf shank. Chuck chicken beef ribs shankle tenderloin short loin."
+    }
+];
 
 var FilterableClimbsList = React.createClass({
     render: function(){
         return (
             <div className="FilterableClimbsList">
             <h1>FilterableClimbsList</h1>
-            <ClimbList />
+            <ClimbList data={this.props.data} />
             <ClimbListFilter />
             <ClimbDetail />
 
@@ -17,24 +52,37 @@ var FilterableClimbsList = React.createClass({
     }
 });
 
-
 var ClimbList = React.createClass({
-    render: function(){
+    render: function() {
+        var climbListItemNodes = this.props.data.map(function (climblistitem) {
+            return (
+                <ClimbListItem
+                    name={climblistitem.name}
+                    location={climblistitem.location}
+                    gradientAverage={climblistitem.gradientAverage}
+                    >
+
+                </ClimbListItem>
+            );
+        });
         return (
             <div className="ClimbList">
-            <h2>Im a ClimbList</h2>
-            <ClimbListItem />
-            <ClimbListPaginate />
+            <h2>I am a ClimbList</h2>
+            {climbListItemNodes}
             </div>
-            );
+        );
     }
 });
+
+
 
 var ClimbListItem = React.createClass({
     render: function(){
         return (
             <div className="ClimbListItem">
-                <h3>Im a ClimbListItem</h3>
+                <h3>{this.props.name}</h3>
+                <p>{this.props.location}</p>
+                <p>{this.props.gradientAverage}</p>
             </div>
             );
     }
@@ -148,5 +196,5 @@ var ClimbDetailFactfile = React.createClass({
 
 
 React.render(
-    <FilterableClimbsList />, document.body
+    <FilterableClimbsList data={data} />, document.body
 );
